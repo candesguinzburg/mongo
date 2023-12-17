@@ -1,0 +1,45 @@
+*{
+    font-family: sans-serif;
+
+}
+
+body{
+    margin: 50px 5vw;
+}
+
+.productsContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card a{
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+
+.btn-new-product{
+    border-radius: 5px;
+    padding: 10px;
+    background-color:black;
+    color: white;
+    border: none;
+}
+
+.errorText{
+    color:  red;
+}

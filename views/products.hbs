@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Lista de productos</h1>
+    <form action="">
+    <a href="/product?order=asc">Asc</a>
+    <a href="/product?order=Desc">Desc</a>
+    </form>
+    <a href="/logOut">Cerrar sesion</a>
+    {{ backgroundColor}}
+    <div class="productsContainer" >
+        {{#each products}}
+            <div  class="card">
+                <h2>{{nombre}}</h2>
+                 <span>{{precio}}</span>
+                <a href="/product/detail?productid={{id}}">Ver detalle</a>
+                
+            </div>
+        {{/each}}
+        
+    </div>
+    <a class="btn-new-product" href="/product/new">Cargar producto</a>
+</body>
+</html>

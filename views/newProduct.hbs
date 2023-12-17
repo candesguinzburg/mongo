@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Completa el siguiente form</h1>
+   <form action="/product/new" method="POST">
+        <div>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" {{!-- required --}}/> 
+        </div>
+        <div>
+            <label for="precio">Precio:</label><br>
+            <input type="number" id="precio" name="precio" {{!-- required --}}/>
+        </div>
+        <div>
+            <label for="stock">Stock:</label><br>
+            <input type="number" id="stock" name="stock" {{!-- required --}}/>
+        </div>
+        <div>
+            <label for="descripcion">Descripcion:</label><br>
+            <textarea id="descripcion" name="descripcion" {{!-- required --}}>
+
+            </textarea>
+        </div>
+        <button type="submit">
+            Cargar producto
+        </button>
+    </form>
+{{#if error}}
+<span class="errorText">{{error}}</span>
+{{/if}}
+</body>
+</html>

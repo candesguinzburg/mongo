@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{#if editMode}}
+    <form method="POST" action="/product/edit">
+    <h1>El nombre del producto es:<input type="text" value="{{product.nombre}}" name="nombre"></h1>
+    <h2>Precio: <input type="number" value="{{product.precio}}" name="precio"></h2>
+    <span>Stock: <input type="text" value="{{product.stock}}" name="stock"></span><br>
+    <textarea name="descripcion">
+     {{product.descripcion}}
+</textarea>
+<button type="submit">Confirmar</button>
+<input type="hidden" value="{{product.id}}" name="id">
+ <a href="/product/detail?productid={{product.id}}">Cancelar</a>
+</form>
+
+{{else}}
+<h1>El nombre del producto es: {{product.nombre}}</h1>
+    <h2>Precio:  {{product.precio}}</h2>
+    <span>Stock: {{product.stock}}</span><br>
+   
+    <span>Descripcion: {{product.descripcion}}</span>
+<form action="/product/delete" method="post">
+    <input type="hidden" value="{{product.id}}" name="productid">
+     <button type="submit" class="btn-delete">Eliminar</button>
+    </form>
+     <a href="/services/editmode?productid={{product.id}}">Activar edicion</a>
+  {{/if}}
+
+   
+</body>
+</html>
